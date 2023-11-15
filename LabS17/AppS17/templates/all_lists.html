@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas DB</title>
+</head>
+<body>
+    <!-- estilos -->
+    <style>
+        table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    </style>
+    <!-- cuerpo tablas -->
+    <h1>Clientes</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>DUI</th>
+        </tr>
+        {% for cliente in cliente %}
+        <tr>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.Nombre }}</td>
+            <td>{{ cliente.Apellido }}</td>
+            <td>{{ cliente.Edad }}</td>
+            <td>{{ cliente.DUI }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h1>Areas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Area</th>
+            <th>Descripcion</th>
+        </tr>
+        {% for area in area %}
+        <tr>
+            <td>{{ area.id }}</td>
+            <td>{{ area.Nombre_del_area }}</td>
+            <td>{{ area.Descripcion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h1>Empleados</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Area ID</th>
+        </tr>
+        {% for empleado in empleado %}
+        <tr>
+            <td>{{ empleado.id }}</td>
+            <td>{{ empleado.Nombre }}</td>
+            <td>{{ empleado.Apellido }}</td>
+            <td>{{ empleado.Edad }}</td>
+            <td>{{ empleado.AreaId_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h1>Ventas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de Venta</th>
+            <th>Monto</th>
+            <th>Cliente ID</th>
+            <th>Empleado ID</th>
+        </tr>
+        {% for venta in venta %}
+        <tr>
+            <td>{{ venta.id }}</td>
+            <td>{{ venta.Fecha_venta }}</td>
+            <td>{{ venta.Monto }}</td>
+            <td>{{ venta.ClienteId_id }}</td>
+            <td>{{ venta.EmpleadoId_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
